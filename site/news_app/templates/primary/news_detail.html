@@ -1,0 +1,16 @@
+{% extends '../base.html' %} {% load static %} {% block content %}
+
+<a onclick="javascript:history.back();return false;" class="btn_back">Назад<i class="fa-solid fa-arrow-left"></i></a>
+<div class="container">
+  <div class="news-detail">
+    <img class="img-news-details" src="{{ news.image }}" alt="icon" />
+    <!-- <p class="news-date">{{ news.created_at }}</p> -->
+    <h1 class="head">{{ news.title }}</h1>
+    <p class="news-text">{{ news.content }}</p>
+    <p class="news-date">{{ news.price }} тг </p>
+    
+
+  </div>
+</div>
+
+{% endblock %}

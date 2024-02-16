@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TNF</title>
+    <link rel="icon" type="image/x-icon" href="{% static './images/logo.jpg' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="{% static './css/style.css' %}" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="logo-box">
+            <img
+              class="logo-img"
+              src="{% static './images/logo.jpg' %}"
+              alt="Logo"
+            />
+            <a href="{% url 'home_page' %}" class="logo">TNF</a>
+          </div>
+          <ul class="header-nav">
+            <li class="nav-list">
+              <a href="{% url 'home_page' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-list">
+              <a href="{% url 'news_page' %}" class="nav-link">Sales</a>
+            </li>
+            <li class="nav-list">
+              <a href="{% url 'about_page' %}" class="nav-link">About</a>
+            </li>
+          </ul>
+          <button id="menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+      <div id="menuList" class="container" style="display: none;">
+        <ul class="mobile-menu">
+          <li class="menu-list">
+            <a href="{% url 'home_page' %}" class="nav-link">Home</a>
+          </li>
+          <li class="menu-list">
+            <a href="{% url 'news_page' %}" class="nav-link">Sales</a>
+          </li>
+          <li class="menu-list">
+            <a href="{% url 'about_page' %}" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="main">{% block content %} {% endblock %}</main>
+
+    <footer class="footer">
+      <div class="container">&copy; 2024.by Damirka</div>
+    </footer>
+
+    <script src="{% static './js/main.js' %}"></script>
+  </body>
+</html>
